@@ -29,7 +29,7 @@ export function Footer() {
   ];
 
   return (
-    <footer className="bg-gray-900 text-white relative">
+    <footer className="bg-gray-700 text-white relative">
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand Section */}
@@ -81,7 +81,7 @@ export function Footer() {
             <p className="text-gray-400 mb-4">Stay updated with our latest news and updates.</p>
             <form className="space-y-3">
               <div className="relative">
-                <input type="email" placeholder="Enter your email" className="w-full px-4 py-2 bg-gray-800 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600" />
+                <input type="email" placeholder="Enter your email" className="w-full px-4 py-2 bg-gray-600 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600" />
                 <button type="submit" className="absolute right-2 top-1/2 -translate-y-1/2 text-blue-500 hover:text-blue-400">
                   <Mail className="w-5 h-5" />
                 </button>

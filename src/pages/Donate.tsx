@@ -163,13 +163,13 @@ export function Donate() {
       if (!result.success) {
         throw new Error(result.message);
       }
-  
+
       // Format date as DD-MM-YYYY
       const today = new Date();
       const formattedDate = `${today.getDate().toString().padStart(2, "0")}-${(today.getMonth() + 1)
         .toString()
         .padStart(2, "0")}-${today.getFullYear()}`;
-  
+
       setDonationDetails({
         amount,
         frequency,
@@ -177,7 +177,7 @@ export function Donate() {
         transactionId: `DON-${Math.random().toString(36).substring(2, 11).toUpperCase()}`,
         date: formattedDate,
       });
-  
+
       setShowSuccess(true);
       setNotificationMessage("Payment successful! Thank you for your donation.");
       setShowNotification(true);
@@ -187,7 +187,7 @@ export function Donate() {
       setShowNotification(true);
     }
   };
-  
+
 
   const handlePhoneVerificationSuccess = async () => {
     setShowPhoneVerification(false)
@@ -341,7 +341,7 @@ export function Donate() {
               </div>
             </div>
             <div className="border-t pt-4">
-              <h3 className="font-semibold mb-3 text-center">You have made it happen</h3>
+              <h3 className="font-semibold mb-3 text-center italic text-gray-500 text-lg">You have made it happen</h3>
               <div className="grid grid-cols-2 gap-4">
                 <Link
                   href="/volunteer"
@@ -389,13 +389,12 @@ export function Donate() {
           {[1, 2, 3, 4].map((i) => (
             <div key={i} className="flex items-center">
               <div
-                className={`relative w-10 h-10 rounded-full flex items-center justify-center transition-colors ${
-                  step === i
+                className={`relative w-10 h-10 rounded-full flex items-center justify-center transition-colors ${step === i
                     ? "bg-blue-600 text-white"
                     : step > i
                       ? "bg-green-500 text-white"
                       : "bg-gray-200 text-gray-600"
-                }`}
+                  }`}
               >
                 {step > i ? <CheckCircle className="w-6 h-6" /> : <span>{i}</span>}
                 <span className="absolute -bottom-6 text-xs font-medium text-gray-600 w-20 text-center">
@@ -430,11 +429,10 @@ export function Donate() {
             <button
               type="submit"
               disabled={phoneNumber.length !== 10}
-              className={`w-full py-3 rounded-md font-semibold transition-colors ${
-                phoneNumber.length === 10
+              className={`w-full py-3 rounded-md font-semibold transition-colors ${phoneNumber.length === 10
                   ? "bg-blue-600 text-white hover:bg-blue-700"
                   : "bg-gray-200 text-gray-500 cursor-not-allowed"
-              }`}
+                }`}
             >
               Continue
             </button>
@@ -448,9 +446,8 @@ export function Donate() {
               <div
                 key={cat.id}
                 onClick={() => setCategory(cat.id)}
-                className={`p-6 border rounded-xl cursor-pointer transition-all transform hover:scale-[1.02] ${
-                  category === cat.id ? "border-blue-600 bg-blue-50 shadow-md" : "hover:border-gray-300 hover:shadow-md"
-                }`}
+                className={`p-6 border rounded-xl cursor-pointer transition-all transform hover:scale-[1.02] ${category === cat.id ? "border-blue-600 bg-blue-50 shadow-md" : "hover:border-gray-300 hover:shadow-md"
+                  }`}
               >
                 <div className="flex items-start space-x-4">
                   <div className={`p-3 rounded-lg bg-${cat.color}-100`}>{cat.icon}</div>
@@ -488,9 +485,8 @@ export function Donate() {
           <button
             onClick={() => setStep(3)}
             disabled={!category}
-            className={`w-full py-4 rounded-lg text-lg font-semibold transition-colors flex items-center justify-center ${
-              category ? "bg-blue-600 text-white hover:bg-blue-700" : "bg-gray-200 text-gray-500 cursor-not-allowed"
-            }`}
+            className={`w-full py-4 rounded-lg text-lg font-semibold transition-colors flex items-center justify-center ${category ? "bg-blue-600 text-white hover:bg-blue-700" : "bg-gray-200 text-gray-500 cursor-not-allowed"
+              }`}
           >
             Continue
             <ArrowRight className="ml-2 w-5 h-5" />
@@ -504,18 +500,16 @@ export function Donate() {
             <div className="grid grid-cols-2 gap-4 mb-8">
               <button
                 onClick={() => setFrequency("one-time")}
-                className={`p-4 border rounded-lg flex items-center justify-center space-x-2 ${
-                  frequency === "one-time" ? "border-blue-600 bg-blue-50" : "hover:border-gray-400"
-                }`}
+                className={`p-4 border rounded-lg flex items-center justify-center space-x-2 ${frequency === "one-time" ? "border-blue-600 bg-blue-50" : "hover:border-gray-400"
+                  }`}
               >
                 <CreditCard className="w-5 h-5" />
                 <span>One-time</span>
               </button>
               <button
                 onClick={() => setFrequency("monthly")}
-                className={`p-4 border rounded-lg flex items-center justify-center space-x-2 ${
-                  frequency === "monthly" ? "border-blue-600 bg-blue-50" : "hover:border-gray-400"
-                }`}
+                className={`p-4 border rounded-lg flex items-center justify-center space-x-2 ${frequency === "monthly" ? "border-blue-600 bg-blue-50" : "hover:border-gray-400"
+                  }`}
               >
                 <Calendar className="w-5 h-5" />
                 <span>Monthly</span>
@@ -529,9 +523,8 @@ export function Donate() {
                 <button
                   key={amt}
                   onClick={() => setAmount(amt)}
-                  className={`py-3 rounded-md text-center transition-colors ${
-                    amount === amt ? "bg-blue-600 text-white" : "bg-gray-100 hover:bg-gray-200"
-                  }`}
+                  className={`py-3 rounded-md text-center transition-colors ${amount === amt ? "bg-blue-600 text-white" : "bg-gray-100 hover:bg-gray-200"
+                    }`}
                 >
                   ${amt}
                 </button>
@@ -555,9 +548,8 @@ export function Donate() {
             <button
               onClick={() => setStep(4)}
               disabled={!amount}
-              className={`px-8 py-3 rounded-md font-semibold transition-colors ${
-                amount ? "bg-blue-600 text-white hover:bg-blue-700" : "bg-gray-200 text-gray-500 cursor-not-allowed"
-              }`}
+              className={`px-8 py-3 rounded-md font-semibold transition-colors ${amount ? "bg-blue-600 text-white hover:bg-blue-700" : "bg-gray-200 text-gray-500 cursor-not-allowed"
+                }`}
             >
               Continue
             </button>
@@ -585,11 +577,10 @@ export function Donate() {
                 <div
                   key={method.id}
                   onClick={() => setPaymentMethod(method.id)}
-                  className={`p-4 border rounded-lg cursor-pointer transition-all ${
-                    paymentMethod === method.id
+                  className={`p-4 border rounded-lg cursor-pointer transition-all ${paymentMethod === method.id
                       ? "border-blue-600 bg-blue-50 shadow-md"
                       : "hover:border-gray-300 hover:shadow-md"
-                  }`}
+                    }`}
                 >
                   <div className="flex items-center space-x-4">
                     <div className={`p-3 rounded-lg ${paymentMethod === method.id ? "bg-blue-100" : "bg-gray-100"}`}>
@@ -743,13 +734,12 @@ export function Donate() {
                   onClick={handleSubmit}
                   disabled={!paymentMethod || isProcessing}
                   className={`px-8 py-3 rounded-md font-semibold transition-colors flex items-center space-x-2
-    ${
-      isProcessing
-        ? "bg-blue-400 cursor-not-allowed"
-        : paymentMethod
-          ? "bg-blue-600 hover:bg-blue-700"
-          : "bg-gray-200 cursor-not-allowed"
-    } text-white`}
+    ${isProcessing
+                      ? "bg-blue-400 cursor-not-allowed"
+                      : paymentMethod
+                        ? "bg-blue-600 hover:bg-blue-700"
+                        : "bg-gray-200 cursor-not-allowed"
+                    } text-white`}
                 >
                   {isProcessing ? (
                     <>
