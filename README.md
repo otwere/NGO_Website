@@ -1,6 +1,8 @@
+![Uploading image.png…]()
+
 # NGO Website  - by Otwere Evans 
 
-## Getting Started
+
 ## +254 700 520 008
 
 1. Run `npm install`
