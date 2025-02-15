@@ -1,4 +1,4 @@
-![Uploading image.png…]()
+
 
 # NGO Website  - by Otwere Evans 
 
