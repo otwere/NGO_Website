@@ -31,7 +31,7 @@ export function PhoneVerification({ onClose, onSuccess }: PhoneVerificationProps
         initial={{ scale: 0.9 }}
         animate={{ scale: 1 }}
         exit={{ scale: 0.9 }}
-        className="bg-white rounded-lg p-8 max-w-md w-full relative"
+        className="bg-gray-50/90 rounded-lg p-8 max-w-md w-full relative"
       >
         <button onClick={onClose} className="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
           <X className="w-6 h-6" />
@@ -39,12 +39,12 @@ export function PhoneVerification({ onClose, onSuccess }: PhoneVerificationProps
         <div className="text-center mb-6">
           <Lock className="w-12 h-12 text-blue-600 mx-auto mb-4" />
           <h2 className="text-2xl font-bold">Verify Your Phone</h2>
-          <p className="text-gray-600 mt-2">Enter the 6-digit PIN sent to your phone to complete the transaction.</p>
+          <p className="text-gray-600 mt-2">Enter the 6-digit code sent to your phone to complete the transaction.</p>
         </div>
         <form onSubmit={handleSubmit}>
           <div className="mb-6">
             <label htmlFor="pin" className="block text-sm font-medium text-gray-700 mb-2">
-              Enter PIN
+              One Time PIN (OTP)
             </label>
             <input
               type="text"
@@ -65,7 +65,7 @@ export function PhoneVerification({ onClose, onSuccess }: PhoneVerificationProps
                 : "bg-gray-200 text-gray-500 cursor-not-allowed"
             }`}
           >
-            Verify PIN
+            Verify OTP
           </button>
         </form>
       </motion.div>

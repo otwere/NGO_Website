@@ -341,7 +341,7 @@ export function Donate() {
               </div>
             </div>
             <div className="border-t pt-4">
-              <h3 className="font-semibold mb-3 text-center">Next Steps</h3>
+              <h3 className="font-semibold mb-3 text-center">You have made it happen</h3>
               <div className="grid grid-cols-2 gap-4">
                 <Link
                   href="/volunteer"

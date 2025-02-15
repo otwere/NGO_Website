@@ -126,7 +126,7 @@ export function Contact() {
           x: 0
         }} transition={{
           delay: 0.4
-        }} className="glass-card p-8 rounded-lg relative">
+        }} className="glass-card p-8 rounded-lg relative ">
             <h2 className="text-2xl font-semibold mb-6">Send us a Message</h2>
             <AnimatePresence mode="wait">
               {isSuccess && <motion.div initial={{
@@ -138,7 +138,7 @@ export function Contact() {
             }} exit={{
               opacity: 0,
               y: -10
-            }} className="absolute inset-0 bg-white/95 backdrop-blur-sm rounded-lg flex items-center justify-center">
+            }} className="absolute inset-0 bg-white/95 border backdrop-blur-sm rounded-lg flex items-center justify-center">
                   <div className="text-center">
                     <div className="inline-flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-green-100 text-green-500">
                       <CheckCircle className="w-8 h-8" />
