@@ -8,21 +8,21 @@ export function NewsPreview() {
     {
       id: "community-center",
       title: "New Community Center Opens",
-      date: "Aug 15, 2023",
+      date: "Aug 15, 2024",
       excerpt: "Celebrating the opening of our latest community development project...",
       image: "https://images.unsplash.com/photo-1572025442646-866d16c84a54",
     },
     {
       id: "fundraising-goal",
       title: "Annual Fundraising Goal Reached",
-      date: "Aug 10, 2023",
+      date: "Aug 10, 2024",
       excerpt: "Thanks to our generous donors, we've exceeded our annual target...",
       image: "https://images.unsplash.com/photo-1579208575657-c595a05383b7",
     },
     {
       id: "volunteer-expansion",
       title: "Volunteer Program Expansion",
-      date: "Aug 5, 2023",
+      date: "Aug 5, 2025",
       excerpt: "We're excited to announce new opportunities for volunteers...",
       image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a",
     },
@@ -67,7 +67,7 @@ export function NewsPreview() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-1 transition-all duration-300"
+              className="bg-inherit border rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-1 transition-all duration-300"
             >
               <div className="relative h-48">
                 <img
@@ -82,11 +82,12 @@ export function NewsPreview() {
                 <p className="text-gray-600 mb-4">{item.excerpt}</p>
                 <Link
                   to={`/news/${item.id}`}
-                  className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-700 transition-colors"
+                  className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-900 transition-all transform hover:scale-95"
                 >
                   Read Full Story
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Link>
+
               </div>
             </motion.div>
           ))}

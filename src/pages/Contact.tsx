@@ -26,7 +26,7 @@ export function Contact() {
   }, {
     icon: <Clock className="w-6 h-6" />,
     title: "Working Hours",
-    details: ["Mon - Fri : 8:00 AM - 6:00 PM", "Sat : 9:00 AM - 1:00 PM", "Sun & Public Holidays : Closed"]
+    details: ["Mon - Fri : 8 : 00 AM - 6 : 00 PM", "Sat : 9 : 00 AM - 1 : 00 PM", "Sun & Public Holidays : Closed"]
   }];
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const {
@@ -126,7 +126,7 @@ export function Contact() {
           x: 0
         }} transition={{
           delay: 0.4
-        }} className="glass-card p-8 rounded-lg relative ">
+        }} className="glass-card border p-8 rounded-lg relative ">
             <h2 className="text-2xl font-semibold mb-6">Send us a Message</h2>
             <AnimatePresence mode="wait">
               {isSuccess && <motion.div initial={{

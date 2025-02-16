@@ -677,7 +677,7 @@ export function Donate() {
                       readOnly
                       className="w-full px-4 py-3 border rounded-md focus:ring-2 focus:ring-blue-600 focus:border-transparent bg-gray-100"
                     />
-                    <p className="mt-1 text-sm text-gray-500">We'll use this number for M-Pesa payment</p>
+                    <p className="mt-1 text-sm text-gray-500">We'll use this number for M-Pesa (prompt - STK Push) payment</p>
                   </div>
                 </>
               )}

@@ -23,7 +23,7 @@ export function FeaturedCauses() {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900">Featured Causes</h2>
           <p className="mt-4 text-lg text-gray-600">
-            Support our ongoing initiatives
+            Support our ongoing Initiatives
           </p>
         </div>
         <div className="grid md:grid-cols-3 gap-8">
@@ -38,7 +38,7 @@ export function FeaturedCauses() {
           delay: index * 0.1
         }} viewport={{
           once: true
-        }} className="glass-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
+        }} className="glass-card  rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
               <div className="relative">
                 <img src={cause.image} alt={cause.title} className="w-full h-48 object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>

@@ -103,7 +103,7 @@ export function Footer() {
       </div>
       
       {/* Scroll to Top Button */}
-      <button onClick={scrollToTop} className="absolute right-6 bottom-6 p-3 rounded-full bg-blue-600 hover:bg-blue-700 transition-colors shadow-none" aria-label="Scroll to top">
+      <button onClick={scrollToTop} className="absolute right-6 bottom-5 p-3 rounded-full bg-blue-600 hover:bg-blue-700 transition-colors shadow-none" aria-label="Scroll to top">
         <ArrowUp className="w-5 h-5" />
       </button>
     </footer>
