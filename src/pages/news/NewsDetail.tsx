@@ -130,7 +130,7 @@ export function NewsDetail() {
   }} className="max-w-4xl mx-auto px-4 py-12">
       <button onClick={() => navigate(-1)} className="flex items-center text-gray-600 hover:text-gray-900 mb-8">
         <ArrowLeft className="w-4 h-4 mr-2" />
-        Back to News
+        Back to Home
       </button>
       <div className="relative h-[400px] mb-8 rounded-lg overflow-hidden">
         <img src={news.image} alt={news.title} className="w-full h-full object-cover" />
@@ -170,9 +170,9 @@ export function NewsDetail() {
           <button className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
             Follow our updates
           </button>
-          <Link to="/donate" className="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700">
+          {/* <Link to="/donate" className="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700">
             Support our cause
-          </Link>
+          </Link> */}
         </div>
       </div>
     </motion.article>;
