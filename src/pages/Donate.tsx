@@ -90,7 +90,7 @@ export function Donate() {
     },
     {
       id: "card",
-      name: "Credit/Debit Card",
+      name: "Credit | Debit Card",
       icon: <CreditCard className="w-6 h-6" />,
       description: "Pay securely with your credit or debit card",
     },
