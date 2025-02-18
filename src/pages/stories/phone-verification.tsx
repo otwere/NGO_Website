@@ -59,11 +59,11 @@ export function PhoneVerification({ onClose, onSuccess }: PhoneVerificationProps
           <button
             type="submit"
             disabled={pin.length !== 6}
-            className={`w-full py-3 rounded-md font-semibold transition-colors ${
-              pin.length === 6
-                ? "bg-blue-600 text-white hover:bg-blue-700"
+            className={`w-full py-3 rounded-md font-semibold transition-all transform 
+    ${pin.length === 6
+                ? "bg-blue-600 text-white hover:bg-blue-700 hover:scale-95"
                 : "bg-gray-200 text-gray-500 cursor-not-allowed"
-            }`}
+              }`}
           >
             Verify OTP
           </button>

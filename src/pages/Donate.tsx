@@ -429,8 +429,8 @@ export function Donate() {
             <button
               type="submit"
               disabled={phoneNumber.length !== 10}
-              className={`w-full py-3 rounded-md font-semibold transition-colors ${phoneNumber.length === 10
-                ? "bg-blue-600 text-white hover:bg-blue-700"
+              className={`w-full py-3 rounded-md font-semibold transition-all duration-300 ${phoneNumber.length === 10
+                ? "bg-blue-600 text-white hover:bg-blue-700 hover:scale-95"
                 : "bg-gray-200 text-gray-500 cursor-not-allowed"
                 }`}
             >
@@ -485,7 +485,9 @@ export function Donate() {
           <button
             onClick={() => setStep(3)}
             disabled={!category}
-            className={`w-full py-4 rounded-lg text-lg font-semibold transition-colors flex items-center justify-center ${category ? "bg-blue-600 text-white hover:bg-blue-700" : "bg-gray-200 text-gray-500 cursor-not-allowed"
+            className={`w-full py-4 rounded-lg text-lg font-semibold transition-all duration-300 flex items-center justify-center ${category
+              ? "bg-blue-600 text-white hover:bg-blue-700 hover:scale-95"
+              : "bg-gray-200 text-gray-500 cursor-not-allowed"
               }`}
           >
             Continue
@@ -548,11 +550,14 @@ export function Donate() {
             <button
               onClick={() => setStep(4)}
               disabled={!amount}
-              className={`px-8 py-3 rounded-md font-semibold transition-colors ${amount ? "bg-blue-600 text-white hover:bg-blue-700" : "bg-gray-200 text-gray-500 cursor-not-allowed"
+              className={`px-8 py-3 rounded-md font-semibold transition-all duration-300 ${amount
+                ? "bg-blue-600 text-white hover:bg-blue-700 hover:scale-95"
+                : "bg-gray-200 text-gray-500 cursor-not-allowed"
                 }`}
             >
               Continue
             </button>
+
           </div>
         </div>
       )}
@@ -579,7 +584,7 @@ export function Donate() {
                   onClick={() => setPaymentMethod(method.id)}
                   className={`p-4 border rounded-lg cursor-pointer transition-all ${paymentMethod === method.id
                     ? "border-blue-600 bg-blue-50 shadow-md"
-                    : "hover:border-gray-300 hover:shadow-md hover:scale-95 transform transition-transform"
+                    : "hover:border-gray-300 hover:shadow-md  transform transition-transform"
                     }`}
                 >
                   <div className="flex items-center space-x-4">
@@ -682,16 +687,34 @@ export function Donate() {
                 </>
               )}
               {paymentMethod === "bank" && (
-                <div className="bg-gray-50 p-4 rounded-lg">
+                <div className="bg-gray-50 p-4 rounded-lg flex flex-col">
                   <h3 className="font-semibold mb-2">Bank Transfer Details</h3>
-                  <div className="space-y-2 text-sm">
-                    <p>Bank: Example Bank</p>
-                    <p>Account Name: HopeWorks Foundation</p>
-                    <p>Account Number: 1234567890</p>
-                    <p>Swift Code: EXAMPXX</p>
-                    <p>Reference: DON-{Math.random().toString(36).substr(2, 9)}</p>
+                  <div className="flex flex-col space-y-2 text-sm">
+                    <div className="flex justify-between">
+                      <span className="font-medium">Bank Name :</span> <span>Example Bank</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="font-medium">Bank Branch :</span> <span>Example Branch</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="font-medium">Bank Branch Code :</span> <span>00000</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="font-medium">Account Name :</span> <span>HopeWorks Foundation</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="font-medium">Account Number :</span> <span>1234567890</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="font-medium">Swift Code :</span> <span>EXAMPXX</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="font-medium">Reference :</span> <span>DON-{Math.random().toString(36).substr(2, 9).toUpperCase()}</span>
+
+                    </div>
                   </div>
                 </div>
+
               )}
               {paymentMethod === "wallet" && (
                 <div className="grid grid-cols-2 gap-4">
@@ -705,19 +728,19 @@ export function Donate() {
                 <h3 className="font-semibold mb-2">Donation Summary</h3>
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between">
-                    <span>Amount:</span>
+                    <span>Amount :</span>
                     <span>${amount}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span>Frequency:</span>
+                    <span>Frequency :</span>
                     <span className="capitalize">{frequency}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span>Cause:</span>
+                    <span>Cause :</span>
                     <span>{categories.find((c) => c.id === category)?.name}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span>Payment Method:</span>
+                    <span>Payment Method :</span>
                     <span>{paymentMethods.find((m) => m.id === paymentMethod)?.name}</span>
                   </div>
                 </div>
@@ -733,11 +756,10 @@ export function Donate() {
                 <button
                   onClick={handleSubmit}
                   disabled={!paymentMethod || isProcessing}
-                  className={`px-8 py-3 rounded-md font-semibold transition-colors flex items-center space-x-2
-    ${isProcessing
+                  className={`px-8 py-3 rounded-md font-semibold transition-all transform flex items-center space-x-2 ${isProcessing
                       ? "bg-blue-400 cursor-not-allowed"
                       : paymentMethod
-                        ? "bg-blue-600 hover:bg-blue-700"
+                        ? "bg-blue-600 hover:bg-blue-700 hover:scale-95"
                         : "bg-gray-200 cursor-not-allowed"
                     } text-white`}
                 >
@@ -753,6 +775,7 @@ export function Donate() {
                     </>
                   )}
                 </button>
+
               </div>
               <p className="mt-4 text-sm text-green-600 flex items-center justify-center">
                 <AlertCircle className="w-4 h-4 mr-2" />
