@@ -244,7 +244,7 @@ export function Donate() {
         exit={{ opacity: 0 }}
         className="max-w-2xl mx-auto px-4 py-12"
       >
-        <div className="bg-inherit border rounded-lg shadow-xl p-8 relative overflow-hidden">
+        <div className="bg-inherit border rounded-lg shadow-sm p-8 relative overflow-hidden">
           <div className="absolute top-0 left-0 right-0 h-2 bg-green-500"></div>
           <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="mb-8 text-center">
             <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-green-100 mb-4">
@@ -297,11 +297,11 @@ export function Donate() {
           </div>
           <div className="space-y-4">
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+              <button className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-md transition duration-300 ease-in-out hover:bg-blue-700 hover:scale-95">
                 <Mail className="w-4 h-4" />
                 Email Receipt
               </button>
-              <button className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700">
+              <button className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-green-600 text-white rounded-md transition duration-300 ease-in-out hover:bg-green-700 hover:scale-95">
                 <Download className="w-4 h-4" />
                 Download PDF
               </button>
@@ -390,10 +390,10 @@ export function Donate() {
             <div key={i} className="flex items-center">
               <div
                 className={`relative w-10 h-10 rounded-full flex items-center justify-center transition-colors ${step === i
-                    ? "bg-blue-600 text-white"
-                    : step > i
-                      ? "bg-green-500 text-white"
-                      : "bg-gray-200 text-gray-600"
+                  ? "bg-blue-600 text-white"
+                  : step > i
+                    ? "bg-green-500 text-white"
+                    : "bg-gray-200 text-gray-600"
                   }`}
               >
                 {step > i ? <CheckCircle className="w-6 h-6" /> : <span>{i}</span>}
@@ -407,7 +407,7 @@ export function Donate() {
         </div>
       </div>
       {step === 1 && (
-        <div className="bg-inherit border rounded-lg shadow-lg p-8">
+        <div className="bg-inherit border rounded-lg shadow-none p-8">
           <h2 className="text-2xl font-semibold mb-6">Enter Your Phone Number</h2>
           <form onSubmit={handlePhoneNumberSubmit}>
             <div className="mb-6">
@@ -430,8 +430,8 @@ export function Donate() {
               type="submit"
               disabled={phoneNumber.length !== 10}
               className={`w-full py-3 rounded-md font-semibold transition-colors ${phoneNumber.length === 10
-                  ? "bg-blue-600 text-white hover:bg-blue-700"
-                  : "bg-gray-200 text-gray-500 cursor-not-allowed"
+                ? "bg-blue-600 text-white hover:bg-blue-700"
+                : "bg-gray-200 text-gray-500 cursor-not-allowed"
                 }`}
             >
               Continue
@@ -446,7 +446,7 @@ export function Donate() {
               <div
                 key={cat.id}
                 onClick={() => setCategory(cat.id)}
-                className={`p-6 border rounded-xl cursor-pointer transition-all transform hover:scale-[1.02] ${category === cat.id ? "border-blue-600 bg-blue-50 shadow-md" : "hover:border-gray-300 hover:shadow-md"
+                className={`p-6 border rounded-xl cursor-pointer transition-all transform hover:scale-[1.02] ${category === cat.id ? "border-blue-600 bg-blue-50 shadow-none" : "hover:border-gray-300 hover:shadow-md"
                   }`}
               >
                 <div className="flex items-start space-x-4">
@@ -494,7 +494,7 @@ export function Donate() {
         </div>
       )}
       {step === 3 && (
-        <div className="bg-inherit border rounded-lg shadow-lg p-8">
+        <div className="bg-inherit border rounded-lg shadow-none p-8">
           <div className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">Donation Frequency</h2>
             <div className="grid grid-cols-2 gap-4 mb-8">
@@ -557,7 +557,7 @@ export function Donate() {
         </div>
       )}
       {step === 4 && (
-        <div className="bg-inherit border rounded-lg shadow-lg p-8">
+        <div className="bg-inherit border rounded-lg shadow-none p-8">
           {paymentError && (
             <motion.div
               initial={{ opacity: 0, y: -10 }}
@@ -578,8 +578,8 @@ export function Donate() {
                   key={method.id}
                   onClick={() => setPaymentMethod(method.id)}
                   className={`p-4 border rounded-lg cursor-pointer transition-all ${paymentMethod === method.id
-                      ? "border-blue-600 bg-blue-50 shadow-md"
-                      : "hover:border-gray-300 hover:shadow-md"
+                    ? "border-blue-600 bg-blue-50 shadow-md"
+                    : "hover:border-gray-300 hover:shadow-md hover:scale-95 transform transition-transform"
                     }`}
                 >
                   <div className="flex items-center space-x-4">

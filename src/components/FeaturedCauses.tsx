@@ -38,7 +38,7 @@ export function FeaturedCauses() {
           delay: index * 0.1
         }} viewport={{
           once: true
-        }} className="glass-card  rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
+        }} className="glass-card  rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all transform hover:-translate-y-1">
               <div className="relative">
                 <img src={cause.image} alt={cause.title} className="w-full h-48 object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>

@@ -1,10 +1,10 @@
 "use client"
 
-import type React from "react"
-import { useEffect, useState, useRef } from "react"
-import { Menu, X, ChevronDown } from "lucide-react"
-import { Link, useLocation, useNavigate } from "react-router-dom"
-import { Logo } from "./Logo"
+import type React from "react";
+import { useEffect, useState, useRef } from "react";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Logo } from "./Logo";
 
 // Define TypeScript interfaces for better type safety
 interface NavigationItem {
@@ -283,11 +283,10 @@ export function Navbar() {
                   <button
                     onClick={() => handleDropdownClick(key)}
                     onKeyDown={(e) => handleKeyDown(e, key)}
-                    className={`flex items-center space-x-1 px-3 py-2 rounded-md text-sm transition-all duration-200 ${
-                      activeDropdown === key
+                    className={`flex items-center space-x-1 px-3 py-2 rounded-md text-sm transition-all duration-200 ${activeDropdown === key
                         ? "text-blue-600 bg-blue-50"
                         : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
-                    }`}
+                      }`}
                     aria-expanded={activeDropdown === key}
                     aria-haspopup="true"
                     aria-controls={`${key}-dropdown`}
@@ -295,9 +294,8 @@ export function Navbar() {
                     <span className="font-medium">{item.name}</span>
                     {item.items && (
                       <ChevronDown
-                        className={`w-4 h-4 transition-transform duration-200 ${
-                          activeDropdown === key ? "rotate-180" : ""
-                        }`}
+                        className={`w-4 h-4 transition-transform duration-200 ${activeDropdown === key ? "rotate-180" : ""
+                          }`}
                         aria-hidden="true"
                       />
                     )}
@@ -327,10 +325,15 @@ export function Navbar() {
 
             <Link
               to="/donate"
-              className="bg-blue-600 text-white px-6 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transform hover:scale-105 active:scale-95"
+              className="bg-blue-600 text-white px-6 py-2 rounded-md text-sm font-medium 
+             transition-all duration-300 ease-in-out 
+             hover:bg-blue-700 hover:scale-95 
+             focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 
+             active:scale-95"
             >
               Donate Now
             </Link>
+
           </div>
 
           {/* Mobile Menu Button */}
@@ -364,18 +367,16 @@ export function Navbar() {
                 <div key={key} className="py-1">
                   <button
                     onClick={() => handleDropdownClick(key)}
-                    className={`flex items-center justify-between w-full px-4 py-3 text-left transition-all duration-200 ${
-                      activeDropdown === key ? "bg-blue-50 text-blue-600" : "text-gray-600 hover:bg-gray-50"
-                    }`}
+                    className={`flex items-center justify-between w-full px-4 py-3 text-left transition-all duration-200 ${activeDropdown === key ? "bg-blue-50 text-blue-600" : "text-gray-600 hover:bg-gray-50"
+                      }`}
                     aria-expanded={activeDropdown === key}
                     aria-controls={`mobile-${key}-dropdown`}
                   >
                     <span className="font-medium">{item.name}</span>
                     {item.items && (
                       <ChevronDown
-                        className={`w-4 h-4 transition-transform duration-200 ${
-                          activeDropdown === key ? "rotate-180" : ""
-                        }`}
+                        className={`w-4 h-4 transition-transform duration-200 ${activeDropdown === key ? "rotate-180" : ""
+                          }`}
                         aria-hidden="true"
                       />
                     )}

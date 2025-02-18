@@ -109,7 +109,7 @@ export function About() {
           Our Team
         </h2>
         <div className="grid md:grid-cols-3 gap-8">
-          {team.map((member, index) => <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
+          {team.map((member, index) => <div key={index} className="bg-gray-50 hover:bg-white hover:shadow-lg rounded-lg shadow-md overflow-hidden">
               <img src={member.image} alt={member.name} className="w-full h-64 object-cover" />
               <div className="p-6">
                 <h3 className="text-xl font-semibold">{member.name}</h3>
@@ -139,7 +139,7 @@ export function About() {
               }} transition={{
                 duration: 0.5,
                 delay: index * 0.2
-              }} className="bg-white p-6 rounded-lg shadow-lg relative">
+              }} className="bg-white border hover:bg-inherit hover:scale-95 p-6 rounded-lg shadow-lg relative transition-transform duration-300">
                     <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
                     <p className="text-gray-600">{item.description}</p>
                   </motion.div>
